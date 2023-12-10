@@ -1,0 +1,23 @@
+[
+  {
+    "website": "https://data.grandparissud.fr/explore/?sort=modified",
+    "datasets_info": "https://data.grandparissud.fr/api/explore/v2.1/catalog/datasets?include_app_metas=true&lang=fr&limit=10&offset=10&order_by=modified+DESC&timezone=Europe%2FBerlin",
+    "datasetid": "",
+    "recordid": "",
+    "total_count": "",
+    "title": "",
+    "description": "",
+    "theme": "Environnement",
+    "keywords": [],
+    "license": "",
+    "licence_url": "",
+    "created": "",
+    "modified": "",
+    "map_view": true,
+    "analysis_view": true,
+    "table_view": true,
+    "export": false,
+    "api_view": true,
+    "download_count": 0
+  }
+]

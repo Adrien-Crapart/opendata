@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
 * {
   margin: 0;
   padding: 0;
@@ -14,34 +16,37 @@ body {
   background: #f4f7f8;
 }
 
+.navbar li, a, button {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
 header {
-    background-color: #333;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #24252A;
+    padding: 10px 10%;
+}
+
+header a {
+    display: flex;
+    align-items: center;
     color: #fff;
-    padding: 10px 0;
+    margin-right: auto;
+    cursor: pointer;
 }
 
-.navbar img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.logo{
+    width: 80px;
+    height: 80px;
     margin-right: 10px;
-    width: 50px;
-    height: 50px;
-}
-
-.navbar h1 {
-    display: flex;
-    font-size: 21px;
-    font-weight: bold;
-    align-items: center;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
 .navbar ul {
@@ -49,10 +54,43 @@ header {
     flex-direction: row;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+.navbar li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navbar li a {
+    transition: all 0.3s ease 0s;
+}
+
+.navbar li a:hover {
+    color: #0088a9;
+}
+
+.navbar button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.navbar button:hover {
+    background-color: rgba(0,136,169,0.8);
+}
+
+.api-link button{
+    padding: 10px 15px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
 }
 
 .container {
@@ -76,7 +114,7 @@ header {
     margin-bottom: 10px;
 }
 
-li {
+.layer-group li {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -96,27 +134,25 @@ input[type="checkbox"] {
 }
 
 .custom-checkbox {
-/* position: relative; */
-padding-left: 30px; /* Adjust as needed for your icon */
-cursor: pointer;
-display: inline-block;
-margin-bottom: 8px;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
-/* Style the checkmark */
 .custom-checkbox::before {
-content: '\2713'; /* Checkmark character */
-position: absolute;
-left: 0;
-top: 0;
-font-size: 20px; /* Adjust as needed */
-color: #007bff; /* Color for the checkmark */
-visibility: hidden;
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    color: #007bff;
+    visibility: hidden;
 }
 
-/* Style the label when the checkbox is checked */
+
 input[type="checkbox"]:checked + .custom-checkbox::before {
-visibility: visible;
+    visibility: visible;
 }
 
 li img {
@@ -147,3 +183,83 @@ li img {
     background-color: #007bff;
     color: #fff;
 }
+
+.search-bar {
+    margin-bottom: 10px;
+}
+
+#dataset-search {
+    width: 280px;
+    height: 30px; 
+    border: #24252A 1px solid; 
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 500px;
+    height: 25vh;
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content p,
+.card-content h2 {
+    margin-bottom: 5px;
+}
+
+.card-content span {
+    border-radius: 5px;
+    padding: 2px 5px;
+    color: #fff;
+}
+
+.card-content p.themes{
+    display: flex;
+    flex-wrap:wrap;
+    gap: 2px;
+}
+
+.card-content p.themes span {
+    background: #007bff;
+}
+.card-content p.services span {
+    background: #929191;
+}
+
+.card-views {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.view-button {
+    padding: 6px 12px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: #0056b3;
+}
+
+#map { height: 180px; }
