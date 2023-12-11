@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <title>OpenData</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img class="logo" src="images/out-4.png" alt="logo">
+            <h1>OPENDATA</h1>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="explorer.html">Explorer</a></li>
+                <li><a href="visualiser.html">Visualiser</a></li>
+                <li><a href="contribuer.html">Contribuer</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="api-link"><button>API</button></a>
+    </header>
+    <div class="help-data">
+        <h2>Contribuer</h2>
+        <p>Vous souhaitez contribuer au portail Opendata, nous partager une découverte sur une nouvelle source de donnée ?</p> 
+        <p>Remplissez-nous ce formulaire et nous ferons le reste.</p>
+        <p><strong>Merci pour votre aide précieuse !</strong></p>
+
+        <form id="dataForm">
+            <label for="website">Site Web:</label><br>
+            <input type="url" id="website" name="website" placeholder="https://data.grandparissud.fr/explore/?sort=modified" required><br>
+
+            <label for="scaleMap">Échelle de la carte:</label><br>
+            <select name="scaleMap" id="scaleMap">
+                <option value="region">Région</option>
+                <option value="department">Département</option>
+                <option value="commune">Commune</option>
+            </select><br>
+
+            <form>
+                <label for="regions">Sélectionnez une ou plusieurs régions :</label><br>
+                <select id="regions" name="regions" multiple>
+                    <option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option>
+                    <option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
+                    <option value="Bretagne">Bretagne</option>
+                    <option value="Centre-Val de Loire">Centre-Val de Loire</option>
+                    <option value="Corse">Corse</option>
+                    <option value="Grand Est">Grand Est</option>
+                    <option value="Hauts-de-France">Hauts-de-France</option>
+                    <option value="Île-de-France">Île-de-France</option>
+                    <option value="Normandie">Normandie</option>
+                    <option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+                    <option value="Occitanie">Occitanie</option>
+                    <option value="Pays de la Loire">Pays de la Loire</option>
+                    <option value="Provence-Alpes-Côte d'Azur">Provence-Alpes-Côte d'Azur</option>
+                </select><br>
+
+                <button type="submit">Valider</button>
+            </form>
+
+            <label for="departmentIds">Nom(s) du/des département(s):</label><br>
+            <input type="text" id="departmentIds" name="departmentIds" placeholder="https://data.grandparissud.fr/explore/?sort=modified" required><br>
+
+            <label for="datasetsInfo">Informations sur les ensembles de données:</label><br>
+            <input type="url" id="datasetsInfo" name="datasetsInfo" placeholder="https://data.grandparissud.fr/api/explore/v2.1/catalog/datasets?include_app_metas=true&lang=fr&limit=10&offset=10&order_by=modified+DESC&timezone=Europe%2FBerlin" required><br>
+
+            <button type="button" onclick="addData()">Soumettre ma demande</button>
+        </form>
+    </div>
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>

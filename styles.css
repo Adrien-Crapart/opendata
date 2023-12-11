@@ -128,7 +128,7 @@ header a {
     align-items: center;
 }
 
-input[type="checkbox"] {
+.layer-group input[type="checkbox"] {
     position: absolute;
     opacity: 0;
 }
@@ -263,3 +263,44 @@ li img {
 }
 
 #map { height: 180px; }
+
+.help-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px;
+}
+
+.help-data h2 {
+    font-size: 50px;
+}
+
+.help-data p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#dataForm{
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#dataForm input,
+#dataForm select{
+    border: #7e7e7e 0.5px solid;
+    width: 500px;
+    height: 35px;
+    margin-bottom: 15px;
+}
+
+#dataForm button{
+    background: #007bff;
+    width: 500px;
+    height: 35px;
+}
+
+#dataForm select[multiple] {
+    height: auto !important;
+}

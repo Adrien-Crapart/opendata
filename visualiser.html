@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <title>OpenData</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img class="logo" src="images/out-4.png" alt="logo">
+            <h1>OPENDATA</h1>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="explorer.html">Explorer</a></li>
+                <li><a href="visualiser.html">Visualiser</a></li>
+                <li><a href="contribuer.html">Contribuer</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="api-link"><button>API</button></a>
+    </header>
+    <div class="data">
+        <div class="container search">
+            <h3>RECHERCHER</h3>
+            <h4>Trouver un jeu de données</h4>
+            <div class="search-bar">
+                <input type="text" id="dataset-search" placeholder="Rechercher un jeu de données...">
+            </div>
+            <div class="layer-group">
+                <h4>Trier les données</h4>
+                <div class="radio-buttons">
+                    <input type="radio" id="sortByUpdateDate" name="sortOption" value="updateDate" checked>
+                    <label for="sortByUpdateDate">Modifié</label>
+
+                    <input type="radio" id="sortByPopularity" name="sortOption" value="popularity">
+                    <label for="sortByPopularity">Populaires</label>
+
+                    <input type="radio" id="sortByAZ" name="sortOption" value="a-z">
+                    <label for="sortByAZ">A-Z</label>
+                </div>
+            </div>
+            <div class="layer-group">
+                <h4>Thèmes</h4>
+                <ul>
+                    <li>
+                        <img src="icons/mobility.svg" alt="Mobilité et Espace Public">
+                        <input type="checkbox" id="layer1"> Mobilité et Espace Public
+                    </li>
+                    <li>
+                        <img src="icons/urbanism.svg" alt="Urbanisme et Logements">
+                        <input type="checkbox" id="layer2"> Urbanisme et Logements
+                    </li>
+                    <li>
+                        <img src="icons/citizenship.svg" alt="Citoyenneté">
+                        <input type="checkbox" id="layer2"> Citoyenneté
+                    </li>
+                    <li>
+                        <img src="icons/services.svg" alt="Equipements, Services, Social">
+                        <input type="checkbox" id="layer2"> Equipements, Services, Social
+                    </li>
+                    <li>
+                        <img src="icons/administration.svg" alt="Administration et Finances Publiques">
+                        <input type="checkbox" id="layer2"> Administration et Finances Publiques
+                    </li>
+                    <li>
+                        <img src="icons/environment.svg" alt="Environnement">
+                        <input type="checkbox" id="layer2"> Environnement
+                    </li>
+                    <li>
+                        <img src="icons/culture.svg" alt="Culture">
+                        <input type="checkbox" id="layer2"> Culture
+                    </li>
+                    <li>
+                        <img src="icons/tourism.svg" alt="Commerces et Tourisme">
+                        <input type="checkbox" id="layer2"> Commerces et Tourisme
+                    </li>
+                </ul>
+            </div>
+            <div class="layer-group">
+                <h4>Territoire</h4>
+                <div id="map"></div>
+                <ul>
+                    <li><input type="checkbox" id="layer3"> <label for="layer3">Région</label></li>
+                    <li><input type="checkbox" id="layer4"> <label for="layer4">Département</label></li>
+                    <li><input type="checkbox" id="layer5"> <label for="layer4">Commune</label></li>
+                </ul>
+            </div>
+            <div class="layer-group">
+                <h4>Année</h4>
+                <ul>
+                    <li>
+                        <select id="monthSelect" name="month">
+                            <option value="1">Janvier</option>
+                            <option value="2">Février</option>
+                            <option value="12">Décembre</option>
+                        </select>
+                    </li>
+                    <li>
+                        Entre <input type="date" id="startDate" name="startDate" required>
+                        et <input type="date" id="endDate" name="endDate" required>
+                    </li>
+                </ul>
+            </div>
+            <div class="layer-group">
+                <h4>Producteur</h4>
+                <ul>
+                    <li><input type="checkbox" id="layer3"> <label for="layer3">Couche 3</label></li>
+                    <li><input type="checkbox" id="layer4"> <label for="layer4">Couche 4</label></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <h2>Titre de la carte 1</h2>
+                    <p>Description de la carte 1.</p>
+                    <p><strong>Producteur:</strong> Nom du producteur 1</p>
+                    <p><strong>Licence:</strong> Licence 1</p>
+                    <p class="services">
+                        <span>PDF</span>
+                        <span>WMS</span>
+                        <span>ZIP</span>
+                    </p>
+                    <p class="themes">
+                        <span>Données géographiques</span>
+                        <span>Environnement</span>
+                        <span>Servitudes</span>
+                    </p>
+                </div>
+                <div class="card-views">
+                    <button class="view-button">Tableau</button>
+                    <button class="view-button">Analyse</button>
+                    <button class="view-button">Carte</button>
+                    <button class="view-button">Export</button>
+                    <button class="view-button">API</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Titre de la carte 2</h2>
+                    <p>Description de la carte 2.</p>
+                    <p><strong>Producteur:</strong> Nom du producteur 2</p>
+                    <p><strong>Licence:</strong> Licence 2</p>
+                    <p><strong>Tags:</strong> Tag4, Tag5, Tag6</p>
+                </div>
+                <div class="card-views">
+                    <button class="view-button">Tableau</button>
+                    <button class="view-button">Analyse</button>
+                    <button class="view-button">Export</button>
+                    <button class="view-button">API</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Titre de la carte 1</h2>
+                    <p>Description de la carte 1.</p>
+                    <p><strong>Producteur:</strong> Nom du producteur 1</p>
+                    <p><strong>Licence:</strong> Licence 1</p>
+                    <p><strong>Tags:</strong> Tag1, Tag2, Tag3</p>
+                </div>
+                <div class="card-views">
+                    <button class="view-button">Tableau</button>
+                    <button class="view-button">Analyse</button>
+                    <button class="view-button">Export</button>
+                    <button class="view-button">API</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Titre de la carte 2</h2>
+                    <p>Description de la carte 2.</p>
+                    <p><strong>Producteur:</strong> Nom du producteur 2</p>
+                    <p><strong>Licence:</strong> Licence 2</p>
+                    <p><strong>Tags:</strong> Tag4, Tag5, Tag6</p>
+                </div>
+                <div class="card-views">
+                    <button class="view-button">Tableau</button>
+                    <button class="view-button">Analyse</button>
+                    <button class="view-button">Export</button>
+                    <button class="view-button">API</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>
