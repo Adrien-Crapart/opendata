@@ -302,5 +302,9 @@ li img {
 }
 
 #dataForm select[multiple] {
-    height: auto !important;
+    height: 250px !important;
+}
+
+.hide {
+    display: none;
 }
