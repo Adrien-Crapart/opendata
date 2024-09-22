@@ -15,21 +15,24 @@
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
+      "#app": ["./.nuxt/app/index.mjs"],
+      "#build": ["./.nuxt/build"],
+      "#imports": ["./.nuxt/imports"],
+      "#paths": ["./.nuxt/paths.mjs"],
+      "#public": ["./public"],
+      "#server": ["./server"],
+      "#app/*": ["./.nuxt/app/*"],
+      "#build/*": ["./.nuxt/build/*"],
+      "#imports/*": ["./.nuxt/imports/*"],
+      "#paths/*": ["./.nuxt/paths.mjs"],
+      "#public/*": ["./public/*"],
+      "#server/*": ["./server/*"],
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": [
-      "@nuxt/types",
-      "@nuxtjs/axios",
-      "@nuxt/content",
-      "@types/node",
-      "@nuxt/typescript-build",
-      "jest",
-      "@vue/test-utils"
-    ]
+    "types": ["jest", "node"]
   },
   "exclude": ["node_modules", ".nuxt", "dist"],
   "include": ["**/*.ts", "**/*.tsx", "**/*.vue"],
-  // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json"
 }

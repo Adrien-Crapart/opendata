@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useDataStore } from '@/store/dataStore'
+import { useDataStore } from '~/stores/dataStore'
 
 const dataStore = useDataStore()
 const data = computed(() => dataStore.selectedData)
