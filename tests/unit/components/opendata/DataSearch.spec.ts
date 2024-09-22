@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import DataSearch from '@/components/opendata/DataSearch.vue';
 import { createPinia, setActivePinia } from 'pinia';
-import { useDataStore } from '@/store/dataStore';
+import { useDataStore } from '@/stores/dataStore';
 
 describe('DataSearch.vue', () => {
   beforeEach(() => {

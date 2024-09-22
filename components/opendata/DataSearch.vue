@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useDataStore } from '@/store/dataStore'
+import { useDataStore } from '~/stores/dataStore'
 
 const query: string = ref('') as unknown as string
 const dataStore = useDataStore()

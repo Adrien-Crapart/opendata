@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { useDataStore } from '@/store/dataStore'
+import { useDataStore } from '~/stores/dataStore'
 import { computed } from 'vue'
 import type { DataItem } from '@/types/models'
 
